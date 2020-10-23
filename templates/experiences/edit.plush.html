@@ -1,0 +1,8 @@
+<div class="py-4 mb-2">
+  <h3 class="d-inline-block">Edit Experience</h3>
+</div>
+
+<%= formFor(experience, {action: experiencePath({ experience_id: experience.ID }), method: "PUT"}) { %>
+  <%= partial("experiences/form.html") %>
+  <%= linkTo(experiencePath({ experience_id: experience.ID }), {class: "btn btn-warning", "data-confirm": "Are you sure?", body: "Cancel"}) %>
+<% } %>

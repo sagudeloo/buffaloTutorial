@@ -1,0 +1,31 @@
+<div class="py-4 mb-2">
+  <h3 class="d-inline-block">Experience Details</h3>
+
+  <div class="float-right">
+    <%= linkTo(experiencesPath(), {class: "btn btn-info"}) { %>
+      Back to all Experiences
+    <% } %>
+    <%= linkTo(editExperiencePath({ experience_id: experience.ID }), {class: "btn btn-warning", body: "Edit"}) %>
+    <%= linkTo(experiencePath({ experience_id: experience.ID }), {class: "btn btn-danger", "data-method": "DELETE", "data-confirm": "Are you sure?", body: "Destroy"}) %>
+  </div>
+</div>
+
+
+
+<ul class="list-group mb-2 ">
+
+
+  <li class="list-group-item pb-1">
+    <label class="small d-block">Title</label>
+    <p class="d-inline-block"><%= experience.Title %></p>
+  </li>
+
+
+
+  <li class="list-group-item pb-1">
+    <label class="small d-block">Description</label>
+    <p class="d-inline-block"><%= experience.Description %></p>
+  </li>
+
+
+</ul>

@@ -1,0 +1,6 @@
+- id: "experience.created.success"
+  translation: "Experience was successfully created."
+- id: "experience.updated.success"
+  translation: "Experience was successfully updated."
+- id: "experience.destroyed.success"
+  translation: "Experience was successfully destroyed."
