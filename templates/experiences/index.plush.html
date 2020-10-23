@@ -6,28 +6,23 @@
     <% } %>
   </div>
 </div>
-
-<table class="table table-hover table-bordered">
-  <thead class="thead-light">
-    <th>Title</th><th>Description</th>
-    <th>&nbsp;</th>
-  </thead>
-  <tbody>
-    <%= for (experience) in experiences { %>
-      <tr>
-        <td class="align-middle"><%= experience.Title %></td><td class="align-middle"><%= experience.Description %></td>
-        <td>
-          <div class="float-right">
+<div class="row row-cols-1 row-cols-md-2">
+  <%= for (experience) in experiences { %>
+    <div class="col mb-4">
+      <div class="card h-100 shadow p-3 mb-5 bg-white rounded">
+        <div class="card-body mh-100">
+          <h5 class="card-title"><%= experience.Title %></h5>
+          <p class="card-text"><%= experience.Description %></p>
+          <div class="btn-group align-self-end" role="group">
             <%= linkTo(experiencePath({ experience_id: experience.ID }), {class: "btn btn-info", body: "View"}) %>
             <%= linkTo(editExperiencePath({ experience_id: experience.ID }), {class: "btn btn-warning", body: "Edit"}) %>
             <%= linkTo(experiencePath({ experience_id: experience.ID }), {class: "btn btn-danger", "data-method": "DELETE", "data-confirm": "Are you sure?", body: "Destroy"}) %>
-          </div>
-        </td>
-      </tr>
-    <% } %>
-  </tbody>
-</table>
-
+          </div>  
+        </div>
+      </div>
+    </div>
+  <% } %>
+</div>
 <div class="text-center">
   <%= paginator(pagination) %>
 </div>
